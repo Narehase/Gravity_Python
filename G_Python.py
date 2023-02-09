@@ -111,8 +111,8 @@ class Gravity:
                 raise TypeError
 
         self.List_r = List_r
-
-        cv2.imshow("G",self.fild)
+        abc = cv2.resize(self.fild, [800,800])
+        cv2.imshow("G",abc)
         cv2.waitKey(32)
 
     def Pick(self, axis, r, color = [0,0,255]):
@@ -146,7 +146,8 @@ class Gravity:
 
     def Navi(self):
         os.system("cls")
-        print("{}second ===============/\\".format(self.dt) )
+        #print("{}second ===============/\\".format(self.dt) )
+        print("++++++++++===============/\\")
         for A in self.Set_List:
             print("{} | Acc: {}".format(A[0],A[3]))
 
@@ -211,8 +212,8 @@ def rand_ty():
     #print(a," :: ",b)
     return[a-500,b-500] 
 
-a = Gravity(D_acc=[0,0],frame_time=0.001)
-a.set_fild()
+a = Gravity([1000,1000],D_acc=[0,0],frame_time=0.001)
+a.set_fild([2000,2000])
 # for i in range(1):
 #     a.sets("aa",1,5,[0,9.8],rand_ty())
 a.sets("ABC",50,5,[180.,14],[100,100],[0,0,255])
